@@ -1,7 +1,7 @@
 #include "main.h"
-#include "GameCharacter.h"
-#include "Eric.c"
-#include "Test.c"
+#include "gamecharacter.h"
+#include "eric.c"
+// #include "Test.c"
 
 GameCharacter ericChar;
 
