@@ -43,6 +43,7 @@
 *.pdb
 *.sym
 *.lst
+*.sav
 
 # Kernel Module Compile Results
 *.mod*

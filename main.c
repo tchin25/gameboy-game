@@ -8,15 +8,14 @@ GameCharacter ericChar;
 void main(){
     setupEric();
     
+    SHOW_SPRITES;
     DISPLAY_ON;
 
     while (1){
         if(joypad()){
-        //printf(ericChar.x);
-        //scroll_sprite(ericChar.spritIds[0],0,1);
         moveGameCharacter(&ericChar, joypad());
-        // performantDelay(100);
-        delay(100);
+        performantDelay(5);
+        //delay(100);
         }
     }
 }
