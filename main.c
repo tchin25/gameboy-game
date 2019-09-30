@@ -6,23 +6,39 @@
 GameCharacter ericChar;
 
 void main(){
-    printf("HELLO WORLD");
     setupEric();
-    SHOW_SPRITES;
+    
     DISPLAY_ON;
+
+    while (1){
+        if(joypad()){
+        //printf(ericChar.x);
+        //scroll_sprite(ericChar.spritIds[0],0,1);
+        moveGameCharacter(&ericChar, joypad());
+        // performantDelay(100);
+        delay(100);
+        }
+    }
 }
 
 void setupEric() {
-    ericChar.x = 0;
-    ericChar.y = 0;
-    ericChar.height = 16;
-    ericChar.width = 16;
+    ericChar.x = (UINT8) 16;
+    ericChar.y = (UINT8) 16;
+    ericChar.height = (UINT8) 16;
+    ericChar.width = (UINT8) 16;
 
-    SPRITES_8x16;
 
     set_sprite_data(0, 31, Eric);
     set_sprite_tile(0, 0);
-    set_sprite_tile(1, 2);
+    ericChar.spritIds[0] = (UBYTE) 0;
+    set_sprite_tile(1, 1);
+    ericChar.spritIds[1] = (UBYTE) 1;
+    set_sprite_tile(2, 2);
+    ericChar.spritIds[2] = (UBYTE) 2;
+    set_sprite_tile(3, 3);
+    ericChar.spritIds[3] = (UBYTE) 3;
     move_sprite(0, 16, 16);
-    move_sprite(1, 24, 16);
+    move_sprite(1, 16, 24);
+    move_sprite(2, 24, 16);
+    move_sprite(3, 24, 24);
 }

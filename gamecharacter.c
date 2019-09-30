@@ -1,9 +1,25 @@
-#include "helper.h"
 #include "gamecharacter.h"
 
-void moveGameCharacter(struct GameCharacter* character, UINT8 x, UINT8 y){
-    move_sprite(character->spritids[0], x, y);
-    move_sprite(character->spritids[1], x + SPRITE_SIZE, y);
-    move_sprite(character->spritids[2], x, y + SPRITE_SIZE);
-    move_sprite(character->spritids[3], x + SPRITE_SIZE, y + SPRITE_SIZE);
+void moveGameCharacter(GameCharacter* character, Direction d){
+    //printf(d);
+    switch (d)
+    { //TODO: Diagonals
+    case up:
+        character->y -= MOVE_SPEED;
+        break;
+    case down:
+        character->y += MOVE_SPEED;
+        break;
+    case right:
+        character->x += MOVE_SPEED;
+        break;
+    case left:
+        character->x -= MOVE_SPEED;
+        break;
+    }
+
+    move_sprite(character->spritIds[0], character->x, character->y);
+    move_sprite(character->spritIds[1], character->x, character->y + SPRITE_SIZE);
+    move_sprite(character->spritIds[2], character->x + SPRITE_SIZE, character->y);
+    move_sprite(character->spritIds[3], character->x + SPRITE_SIZE, character->y + SPRITE_SIZE);
 }

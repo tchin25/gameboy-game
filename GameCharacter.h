@@ -3,18 +3,21 @@
 
 #include "helper.h"
 
-enum direction {up, down, right, left};
+#define MOVE_SPEED 2
+
+typedef enum Direction {up = J_UP, down = J_DOWN, right = J_RIGHT, left = J_LEFT} Direction;
 
 //generical character structure: id, position, graphics, direction
 typedef struct GameCharacter {
-	UBYTE spritids[4]; // all characters use 4 sprites
+	UBYTE spritIds[4]; // all characters use 4 sprites
 	UINT8 x;
 	UINT8 y;
 	UINT8 width;
 	UINT8 height;
-	UINT8 direction;
+	Direction direction;
+	UINT8 animState;
 } GameCharacter;
 
-void moveGameCharacter(GameCharacter* character, UINT8 x, UINT8 y);
+void moveGameCharacter(GameCharacter* character, Direction);
 
 #endif

@@ -6,6 +6,8 @@
         "hardware.h": "c",
         "sgb.h": "c",
         "eric.h": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "stdio.h": "c",
+        "helper.h": "c"
     }
 }

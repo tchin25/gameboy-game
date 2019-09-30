@@ -4,6 +4,7 @@
 #define SPRITE_SIZE 8
 
 #include <gb/gb.h>
+#include <stdio.h>
 
 //typedefs used to get rid of intellisense errors
 typedef UBYTE;
