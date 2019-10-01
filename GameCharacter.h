@@ -9,7 +9,11 @@ typedef enum Direction {up = J_UP, down = J_DOWN, right = J_RIGHT, left = J_LEFT
 
 //generical character structure: id, position, graphics, direction
 typedef struct GameCharacter {
-	UBYTE spritIds[4]; // all characters use 4 sprites
+	UBYTE* currentSprite;
+	UBYTE upSprite[4];
+	UBYTE downSprite[4]; // all characters use 4 sprites
+	UBYTE rightSprite[4];
+	UBYTE leftSprite[4];
 	UINT8 x;
 	UINT8 y;
 	UINT8 width;
